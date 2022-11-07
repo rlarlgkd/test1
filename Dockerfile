@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.7-slim
 
 # Install requirements
 RUN pip install --no-cache-dir --upgrade pip
@@ -16,7 +16,7 @@ WORKDIR /home
 ENV FLASK_APP=manage.py
 
 # ENTRYPOINT
-ENTRYPOINT python manage.py run
+# ENTRYPOINT python manage.py run
 
 EXPOSE 5000
 #not sure if app:app works$ -> (MODULE_NAME):$(VARIABLE_NAME)
