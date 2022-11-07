@@ -1,4 +1,4 @@
-FROM python
+FROM python:3.7
 
 # Install requirements
 RUN pip install --no-cache-dir --upgrade pip
@@ -17,3 +17,7 @@ ENV FLASK_APP=manage.py
 
 # ENTRYPOINT
 ENTRYPOINT python manage.py run
+
+EXPOSE 5000
+#not sure if app:app works$ -> (MODULE_NAME):$(VARIABLE_NAME)
+CMD ["gunicorn", "-b", "0.0.0.0:5000" ,"manage:app"]
