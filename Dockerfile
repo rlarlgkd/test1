@@ -10,6 +10,10 @@ ADD app /home/app
 ADD migrations /home/migrations
 ADD requirements.txt /home
 ADD manage.py /home
+RUN python manage.py db init
+RUN python manage.py db migrate
+RUN python manage.py db upgrade
+
 
 WORKDIR /home
 # Set environment variables
