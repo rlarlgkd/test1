@@ -20,4 +20,4 @@ ENV FLASK_APP=manage.py
 
 EXPOSE 5000
 #not sure if app:app works$ -> (MODULE_NAME):$(VARIABLE_NAME)
-# CMD ["gunicorn", "-b", "0.0.0.0:5000" ,"manage:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000" ,"manage:app"]
