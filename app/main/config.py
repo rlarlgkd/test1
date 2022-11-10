@@ -1,6 +1,6 @@
 import os
 
-host_name = '127.0.0.1'
+host_name = 'mydb-0.mydb.default.svc.cluster.local'
 username = "root"
 password = "dkagh1."
 database_name = "test1"
@@ -13,12 +13,12 @@ class Config(object):
   DEBUG = False
   
 class DevelopmentConfig(Config):
-  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@127.0.0.1:3306/test1?charset=utf8"
+  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local/test1?charset=utf8"
   DEBUG = True
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
-  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@127.0.0.1:3306/test1?charset=utf8"
+  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local/test1?charset=utf8"
   DEBUG = False
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
