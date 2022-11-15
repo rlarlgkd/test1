@@ -13,12 +13,12 @@ class Config(object):
   DEBUG = False
   
 class DevelopmentConfig(Config):
-  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local/test1?charset=utf8"
+  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local:3306/test1?charset=utf8"
   DEBUG = True
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
-  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local/test1?charset=utf8"
+  SQLALCHEMY_DATABASE_URI = "mysql://root:dkagh1.@mydb-0.mydb.default.svc.cluster.local:3306/test1?charset=utf8"
   DEBUG = False
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
